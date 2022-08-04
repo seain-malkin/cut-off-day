@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CutoffDay</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_age">\?</string>
+    <string name="age_cutoff">%1$d+</string>
+    <string name="action_decrease">Decrease</string>
+    <string name="action_increase">Increase</string>
+</resources>

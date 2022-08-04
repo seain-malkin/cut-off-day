@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">16dp</dimen>
+    <dimen name="padding_half">8dp</dimen>
+    <dimen name="padding_qtr">4dp</dimen>
+    <dimen name="padding_double">32dp</dimen>
+</resources>
