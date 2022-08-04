@@ -3,8 +3,10 @@ package me.seain.cutoffday.fragment
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import me.seain.cutoffday.R
 import me.seain.cutoffday.databinding.FragmentStatusBinding
+import me.seain.cutoffday.viewmodel.MainViewModel
 
 /**
  * Fragment that displays the cutoff-age over the bottom app bar.
@@ -12,6 +14,8 @@ import me.seain.cutoffday.databinding.FragmentStatusBinding
  * @author Seain Malkin
  */
 class StatusFragment : Fragment() {
+
+    private val model: MainViewModel by activityViewModels()
 
     // Reference to the view binding object
     // Only defined between onCreateView and onDestroyView
@@ -23,7 +27,7 @@ class StatusFragment : Fragment() {
      *
      * @param value The new age to display in the UI
      */
-    fun updateAge(value: Int) {
+    private fun updateAge(value: Int) {
         binding.cutoffAge.text = getString(R.string.age_cutoff, value)
         if (binding.cutoffAge.visibility == View.INVISIBLE) {
             binding.cutoffAge.visibility = View.VISIBLE
@@ -36,10 +40,14 @@ class StatusFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentStatusBinding.inflate(inflater, container, false)
-
         binding.cutoffAge.visibility = View.INVISIBLE
+
+        model.cutoffAge.observe(viewLifecycleOwner) {
+            updateAge(it)
+        }
+
         return binding.root
     }
 
