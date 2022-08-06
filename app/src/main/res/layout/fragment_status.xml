@@ -11,6 +11,7 @@
         android:id="@+id/cutoff_age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
         android:paddingStart="@dimen/padding"
         android:text="@string/default_age" />
 

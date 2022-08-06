@@ -25,9 +25,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.bottomAppBar)
 
-        // Change app bar surface color
-        val colorSurface3 = SurfaceColors.SURFACE_3.getColor(this)
-        binding.bottomAppBar.setBackgroundColor(colorSurface3)
+        val colorSurface1 = SurfaceColors.SURFACE_1.getColor(this)
+        binding.verifiedLayout.setBackgroundColor(colorSurface1)
 
         statusFragment = StatusFragment()
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ThemeOverlay.COD.BottomAppBar" parent="ThemeOverlay.Material3.BottomAppBar">
+        <item name="actionMenuTextColor">?attr/colorSecondary</item>
+        <item name="iconTint">?attr/colorSecondary</item>
+    </style>
+    <style name="ThemeOverlay.COD.VerifiedBar" parent="">
+        <item name="tint">?attr/colorSecondaryContainer</item>
+    </style>
+    <style name="VerifiedBorder">
+        <item name="android:background">?attr/colorSurface</item>
+    </style>
+    <style name="ThemeOverlay.COD.Primary50" parent="">
+        <item name="android:textColor">@color/primary_50</item>
+    </style>
+    <style name="TextAppearance.COD.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="android:textSize">96dp</item>
+    </style>
+</resources>

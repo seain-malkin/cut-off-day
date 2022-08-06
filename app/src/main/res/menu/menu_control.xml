@@ -4,9 +4,11 @@
     <item
         android:id="@+id/action_decrease"
         android:title="@string/action_decrease"
+        android:icon="@drawable/do_not_disturb_on_fill0_wght400_grad0_opsz48"
         app:showAsAction="always"/>
     <item
         android:id="@+id/action_increase"
         android:title="@string/action_increase"
+        android:icon="@drawable/add_circle_fill0_wght400_grad0_opsz48"
         app:showAsAction="always"/>
 </menu>
