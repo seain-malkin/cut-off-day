@@ -5,37 +5,33 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
-import com.google.android.material.elevation.SurfaceColors
 import me.seain.cutoffday.databinding.ActivityMainBinding
+import me.seain.cutoffday.fragment.DayComponentFragment
+import me.seain.cutoffday.fragment.MonthComponentFragment
 import me.seain.cutoffday.fragment.StatusFragment
+import me.seain.cutoffday.fragment.YearComponentFragment
 import me.seain.cutoffday.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var statusFragment: StatusFragment
     private val model: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
         setSupportActionBar(binding.bottomAppBar)
 
-        val colorSurface1 = SurfaceColors.SURFACE_1.getColor(this)
-        binding.verifiedLayout.setBackgroundColor(colorSurface1)
-
-        statusFragment = StatusFragment()
-
         supportFragmentManager.beginTransaction().run {
-            replace(binding.bottomFragment.id, statusFragment)
+            replace(binding.dateTopFragment.id, YearComponentFragment())
+            replace(binding.dateMiddleFragment.id, MonthComponentFragment())
+            replace(binding.dateBottomFragment.id, DayComponentFragment())
+            replace(binding.bottomFragment.id, StatusFragment())
             commit()
         }
     }
-
 
     /**
      * @see [onOptionsItemSelected]

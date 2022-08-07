@@ -16,4 +16,7 @@
     <style name="TextAppearance.COD.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
         <item name="android:textSize">96dp</item>
     </style>
+    <style name="TextAppearance.COD.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+
+    </style>
 </resources>

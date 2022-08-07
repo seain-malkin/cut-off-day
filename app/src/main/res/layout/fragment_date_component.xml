@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:baselineAligned="false">
+
+    <RelativeLayout
+        android:id="@+id/verified_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:theme="@style/ThemeOverlay.COD.VerifiedBar">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_half"
+            android:layout_centerVertical="true"
+            android:src="@drawable/verified_user_fill0_wght400_grad0_opsz48" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/less_than"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/less_than_sign"
+            android:textAppearance="@style/TextAppearance.COD.DisplayLarge"
+            android:paddingStart="@dimen/padding_half"
+            android:paddingEnd="@dimen/padding_half"
+            android:paddingBottom="@dimen/padding"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/date_component_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:text="@string/placeholder_year"
+            android:textAppearance="@style/TextAppearance.COD.LabelLarge"
+            android:textColor="?attr/colorSurfaceVariant"
+            android:padding="@dimen/padding_half"/>
+
+        <TextView
+            android:id="@+id/date_component"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder_year"
+            android:textAppearance="@style/TextAppearance.COD.DisplayLarge"
+            android:paddingStart="@dimen/padding_half"
+            android:paddingEnd="@dimen/padding_half"
+            android:paddingBottom="@dimen/padding"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
