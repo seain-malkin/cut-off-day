@@ -27,7 +27,7 @@ abstract class DateComponentFragment : Fragment() {
      * @param date The cut-off date
      * @return Value of the date component, e.g. 2022; 7; 31
      */
-    protected abstract fun getDateComponent(date: Date): Int
+    protected abstract fun getDateComponent(date: Date): String
 
     /**
      * Returns the name of the component to be displayed along side the date component.
@@ -53,12 +53,16 @@ abstract class DateComponentFragment : Fragment() {
         binding.verifiedLayout.setBackgroundColor(colorSurface1)
 
         // Set UI components based on template method values
-        val dateComponent = getDateComponent(Date(2022, 8, 7))
         val color = ContextCompat.getColor(requireContext(), getDateComponentColor())
-        binding.dateComponent.text = "%02d".format(dateComponent)
         binding.dateComponentLabel.text = getDateComponentLabel()
         binding.dateComponent.setTextColor(color)
         binding.lessThan.setTextColor(color)
+
+        model.cutoffDate.observe(viewLifecycleOwner) {
+            it?.let {
+                binding.dateComponent.text = getDateComponent(it)
+            }
+        }
 
         return binding.root
     }

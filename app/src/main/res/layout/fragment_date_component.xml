@@ -49,7 +49,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:text="@string/placeholder_year"
             android:textAppearance="@style/TextAppearance.COD.LabelLarge"
             android:textColor="?attr/colorSurfaceVariant"
             android:padding="@dimen/padding_half"/>
@@ -58,7 +57,6 @@
             android:id="@+id/date_component"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/placeholder_year"
             android:textAppearance="@style/TextAppearance.COD.DisplayLarge"
             android:paddingStart="@dimen/padding_half"
             android:paddingEnd="@dimen/padding_half"

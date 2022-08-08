@@ -1,12 +1,14 @@
 package me.seain.cutoffday.fragment
 
 import me.seain.cutoffday.R
+import java.text.SimpleDateFormat
 import java.util.*
 
 class DayComponentFragment : DateComponentFragment() {
 
-    override fun getDateComponent(date: Date): Int {
-        return 7
+    override fun getDateComponent(date: Date): String {
+        val formatter = SimpleDateFormat("dd", Locale.getDefault())
+        return formatter.format(date)
     }
 
     override fun getDateComponentLabel(): String {

@@ -45,7 +45,9 @@ class StatusFragment : Fragment() {
         binding.cutoffAge.visibility = View.INVISIBLE
 
         model.cutoffAge.observe(viewLifecycleOwner) {
-            updateAge(it)
+            it?.let {
+                updateAge(it)
+            }
         }
 
         return binding.root

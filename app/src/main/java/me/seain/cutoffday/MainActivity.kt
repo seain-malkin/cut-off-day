@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
             replace(binding.bottomFragment.id, StatusFragment())
             commit()
         }
+
+        model.setCutoffAge(18)
     }
 
     /**
