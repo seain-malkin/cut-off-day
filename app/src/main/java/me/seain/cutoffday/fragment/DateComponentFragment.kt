@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.google.android.material.elevation.SurfaceColors
-import me.seain.cutoffday.R
 import me.seain.cutoffday.databinding.FragmentDateComponentBinding
 import me.seain.cutoffday.viewmodel.MainViewModel
 import java.util.*
@@ -16,9 +15,6 @@ import java.util.*
 abstract class DateComponentFragment : Fragment() {
 
     private val model: MainViewModel by activityViewModels()
-
-    private var _binding: FragmentDateComponentBinding? = null
-    private val binding get() = _binding!!
 
     // Template methods
     /**
@@ -65,10 +61,5 @@ abstract class DateComponentFragment : Fragment() {
         }
 
         return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

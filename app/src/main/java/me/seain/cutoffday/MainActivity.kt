@@ -1,5 +1,6 @@
 package me.seain.cutoffday
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -32,7 +33,24 @@ class MainActivity : AppCompatActivity() {
             commit()
         }
 
-        model.setCutoffAge(18)
+        // Get app saved preferences object
+        val preferences = this.getPreferences(Context.MODE_PRIVATE)
+        // Get default cut off age from res/values/integers
+        val defaultAge = resources.getInteger(R.integer.saved_cut_off_age_default_key)
+        // Retrieve the saved cut off age in preferences or apply default
+        val savedAge = preferences.getInt(getString(R.string.saved_cut_off_age_key), defaultAge)
+        // Apply saved age to the view model
+        model.setCutoffAge(savedAge)
+
+        // When cut-off age changes, save it to app preferences
+        model.cutoffAge.observe(this) { age ->
+            age?.let {
+                with (preferences.edit()) {
+                    putInt(getString(R.string.saved_cut_off_age_key), age)
+                    apply()
+                }
+            }
+        }
     }
 
     /**

@@ -16,6 +16,6 @@ class DayComponentFragment : DateComponentFragment() {
     }
 
     override fun getDateComponentColor(): Int {
-        return R.color.primary_70
+        return R.color.primary_30
     }
 }

@@ -16,6 +16,6 @@ class YearComponentFragment : DateComponentFragment() {
     }
 
     override fun getDateComponentColor(): Int {
-        return R.color.primary_30
+        return R.color.primary_70
     }
 }

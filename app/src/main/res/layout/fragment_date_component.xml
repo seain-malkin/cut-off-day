@@ -17,7 +17,8 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/padding_half"
             android:layout_centerVertical="true"
-            android:src="@drawable/verified_user_fill0_wght400_grad0_opsz48" />
+            android:src="@drawable/verified_user_fill0_wght400_grad0_opsz48"
+            android:contentDescription="@string/image_verified"/>
 
     </RelativeLayout>
 
@@ -51,7 +52,7 @@
             android:layout_alignParentEnd="true"
             android:textAppearance="@style/TextAppearance.COD.LabelLarge"
             android:textColor="?attr/colorSurfaceVariant"
-            android:padding="@dimen/padding_half"/>
+            android:padding="@dimen/padding_half" />
 
         <TextView
             android:id="@+id/date_component"
