@@ -11,8 +11,9 @@
         android:id="@+id/cutoff_age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-        android:padding="@dimen/padding"
+        android:textAppearance="@style/TextAppearance.COD.HeadlineMedium"
+        android:paddingStart="@dimen/padding"
+        android:paddingEnd="@dimen/padding"
         android:text="@string/default_age" />
 
 </LinearLayout>

@@ -32,27 +32,15 @@ abstract class DateComponentFragment : Fragment() {
      */
     protected abstract fun getDateComponentLabel(): String
 
-    /**
-     * Returns the id value of the font color to apply to the component.
-     *
-     * @return The color id.
-     */
-    protected abstract fun getDateComponentColor(): Int
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentDateComponentBinding.inflate(inflater, container, false)
+        val colorSurface3 = SurfaceColors.SURFACE_3.getColor(requireContext())
 
-        val colorSurface1 = SurfaceColors.SURFACE_1.getColor(requireContext())
-        binding.verifiedLayout.setBackgroundColor(colorSurface1)
-
-        // Set UI components based on template method values
-        val color = ContextCompat.getColor(requireContext(), getDateComponentColor())
+        binding.verifiedLayout.setBackgroundColor(colorSurface3)
         binding.dateComponentLabel.text = getDateComponentLabel()
-        binding.dateComponent.setTextColor(color)
-        binding.lessThan.setTextColor(color)
 
         model.cutoffDate.observe(viewLifecycleOwner) {
             it?.let {

@@ -1,6 +1,5 @@
 package me.seain.cutoffday.fragment
 
-import me.seain.cutoffday.R
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -13,9 +12,5 @@ class MonthComponentFragment : DateComponentFragment() {
 
     override fun getDateComponentLabel(): String {
         return "Month"
-    }
-
-    override fun getDateComponentColor(): Int {
-        return R.color.primary_50
     }
 }

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
+import com.google.android.material.elevation.SurfaceColors
 import me.seain.cutoffday.databinding.ActivityMainBinding
 import me.seain.cutoffday.fragment.DayComponentFragment
 import me.seain.cutoffday.fragment.MonthComponentFragment
@@ -24,6 +25,9 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
         setSupportActionBar(binding.bottomAppBar)
+
+        val surfaceColor1 = SurfaceColors.SURFACE_1.getColor(this)
+        binding.root.setBackgroundColor(surfaceColor1)
 
         supportFragmentManager.beginTransaction().run {
             replace(binding.dateTopFragment.id, YearComponentFragment())

@@ -9,14 +9,14 @@
     <RelativeLayout
         android:id="@+id/verified_layout"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:theme="@style/ThemeOverlay.COD.VerifiedBar">
+        android:layout_height="match_parent">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/padding_half"
             android:layout_centerVertical="true"
+            android:theme="@style/ThemeOverlay.COD.VerifiedIcon"
             android:src="@drawable/verified_user_fill0_wght400_grad0_opsz48"
             android:contentDescription="@string/image_verified"/>
 
@@ -31,7 +31,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/less_than_sign"
-            android:textAppearance="@style/TextAppearance.COD.DisplayLarge"
+            android:textAppearance="@style/TextAppearance.COD.DisplayMedium"
+            android:theme="@style/ThemeOverlay.COD.DirectionIndicator"
             android:paddingStart="@dimen/padding_half"
             android:paddingEnd="@dimen/padding_half"
             android:paddingBottom="@dimen/padding"
@@ -51,7 +52,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:textAppearance="@style/TextAppearance.COD.LabelLarge"
-            android:textColor="?attr/colorSurfaceVariant"
+            android:theme="@style/ThemeOverlay.COD.DateComponentLabel"
             android:padding="@dimen/padding_half" />
 
         <TextView
