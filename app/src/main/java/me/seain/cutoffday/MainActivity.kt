@@ -26,8 +26,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.bottomAppBar)
 
-        val surfaceColor1 = SurfaceColors.SURFACE_1.getColor(this)
+        val surfaceColor1 = SurfaceColors.SURFACE_0.getColor(this)
+        val surfaceColor2 = SurfaceColors.SURFACE_2.getColor(this)
+        val surfaceColor3 = SurfaceColors.SURFACE_3.getColor(this)
         binding.root.setBackgroundColor(surfaceColor1)
+        binding.bottomAppBar.setBackgroundColor(surfaceColor3)
+        binding.borderView1.setBackgroundColor(surfaceColor2)
+        binding.borderView2.setBackgroundColor(surfaceColor2)
 
         supportFragmentManager.beginTransaction().run {
             replace(binding.dateTopFragment.id, YearComponentFragment())

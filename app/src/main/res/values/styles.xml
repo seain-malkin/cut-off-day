@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Theme Overlay -->
     <style name="ThemeOverlay.COD.BottomAppBar" parent="ThemeOverlay.Material3.BottomAppBar">
         <item name="actionMenuTextColor">?attr/colorSecondary</item>
         <item name="iconTint">?attr/colorSecondary</item>
     </style>
-    <style name="VerifiedBorder">
-        <item name="android:background">?attr/colorSurface</item>
+    <style name="ThemeOverlay.COD.DirectionIndicator" parent="ThemeOverlay.Material3">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
     </style>
-    <style name="ThemeOverlay.COD.Primary50" parent="">
-        <item name="android:textColor">@color/primary_50</item>
+    <style name="ThemeOverlay.COD.VerifiedIcon" parent="ThemeOverlay.Material3">
+        <item name="android:tint">?attr/colorPrimary</item>
     </style>
+    <style name="ThemeOverlay.COD.DateComponents" parent="ThemeOverlay.Material3">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="ThemeOverlay.COD.DateComponentLabel" parent="ThemeOverlay.Material3">
+        <item name="android:textColor">?attr/colorOutline</item>
+    </style>
+    <style name="ThemeOverlay.COD.Surface1Border" parent="ThemeOverlay.Material3">
+        <item name="android:background">?attr/colorOutline</item>
+    </style>
+
+    <!-- Widget -->
+    <style name="Widget.COD.CutoffAgeLabel" parent="Theme.COD">
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <!-- Text Appearance -->
     <style name="TextAppearance.COD.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
         <item name="android:textSize">96sp</item>
     </style>
     <style name="TextAppearance.COD.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
         <item name="android:textSize">64sp</item>
     </style>
-    <style name="TextAppearance.COD.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
-        <item name="android:textColor">?attr/colorPrimary</item>
-    </style>
-    <style name="TextAppearance.COD.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
-
-    </style>
-    <style name="ThemeOverlay.COD.DirectionIndicator" parent="">
-        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
-    </style>
-    <style name="ThemeOverlay.COD.VerifiedIcon" parent="">
-        <item name="android:tint">?attr/colorPrimary</item>
-    </style>
-    <style name="ThemeOverlay.COD.DateComponents" parent="">
-        <item name="android:textColor">?attr/colorOnSurface</item>
-    </style>
-    <style name="ThemeOverlay.COD.DateComponentLabel" parent="">
-        <item name="android:textColor">?attr/colorOutline</item>
-    </style>
+    <style name="TextAppearance.COD.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium"/>
+    <style name="TextAppearance.COD.LabelLarge" parent="TextAppearance.Material3.LabelLarge"/>
 </resources>

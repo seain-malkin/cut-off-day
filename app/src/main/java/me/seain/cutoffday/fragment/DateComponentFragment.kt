@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.google.android.material.elevation.SurfaceColors
@@ -37,9 +36,9 @@ abstract class DateComponentFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentDateComponentBinding.inflate(inflater, container, false)
-        val colorSurface3 = SurfaceColors.SURFACE_3.getColor(requireContext())
+        val surfaceColor3 = SurfaceColors.SURFACE_1.getColor(requireContext())
 
-        binding.verifiedLayout.setBackgroundColor(colorSurface3)
+        binding.verifiedLayout.setBackgroundColor(surfaceColor3)
         binding.dateComponentLabel.text = getDateComponentLabel()
 
         model.cutoffDate.observe(viewLifecycleOwner) {

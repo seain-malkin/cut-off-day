@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.COD.HeadlineMedium"
+        style="@style/Widget.COD.CutoffAgeLabel"
         android:paddingStart="@dimen/padding"
         android:paddingEnd="@dimen/padding"
         android:text="@string/default_age" />
