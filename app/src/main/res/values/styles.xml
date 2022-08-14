@@ -28,10 +28,10 @@
 
     <!-- Text Appearance -->
     <style name="TextAppearance.COD.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
-        <item name="android:textSize">96sp</item>
+        <item name="android:textSize">@dimen/display_large</item>
     </style>
     <style name="TextAppearance.COD.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
-        <item name="android:textSize">64sp</item>
+        <item name="android:textSize">@dimen/display_medium</item>
     </style>
     <style name="TextAppearance.COD.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium"/>
     <style name="TextAppearance.COD.LabelLarge" parent="TextAppearance.Material3.LabelLarge"/>

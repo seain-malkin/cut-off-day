@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:theme="@style/ThemeOverlay.COD.DateComponents"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_layout">
+
+        <RelativeLayout
+            android:id="@+id/verified_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_half"
+                android:layout_centerVertical="true"
+                android:theme="@style/ThemeOverlay.COD.VerifiedIcon"
+                android:src="@drawable/verified_user_fill0_wght400_grad0_opsz48"
+                android:contentDescription="@string/image_verified"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/less_than"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/less_than_sign"
+            android:textAppearance="@style/TextAppearance.COD.DisplayMedium"
+            android:theme="@style/ThemeOverlay.COD.DirectionIndicator"
+            android:paddingStart="@dimen/padding_half"
+            android:paddingEnd="@dimen/padding_half"
+            android:gravity="center"/>
+
+        <FrameLayout
+            android:id="@+id/date_top_fragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"/>
+
+        <View
+            android:id="@+id/border_view_1"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:theme="@style/ThemeOverlay.COD.Surface1Border"/>
+
+        <FrameLayout
+            android:id="@+id/date_middle_fragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <View
+            android:id="@+id/border_view_2"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:theme="@style/ThemeOverlay.COD.Surface1Border"/>
+
+        <FrameLayout
+            android:id="@+id/date_bottom_fragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottom_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.COD.BottomAppBar"
+            style="@style/Widget.Material3.BottomAppBar"
+            app:menu="@menu/menu_control"/>
+
+        <FrameLayout
+            android:id="@+id/bottom_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package me.seain.cutoffday.fragment
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -36,9 +37,11 @@ abstract class DateComponentFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentDateComponentBinding.inflate(inflater, container, false)
-        val surfaceColor3 = SurfaceColors.SURFACE_1.getColor(requireContext())
 
-        binding.verifiedLayout.setBackgroundColor(surfaceColor3)
+        binding.verifiedLayout?.run {
+            setBackgroundColor(SurfaceColors.SURFACE_1.getColor(requireContext()))
+        }
+
         binding.dateComponentLabel.text = getDateComponentLabel()
 
         model.cutoffDate.observe(viewLifecycleOwner) {
