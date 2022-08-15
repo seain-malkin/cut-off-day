@@ -44,12 +44,6 @@ class StatusFragment : Fragment() {
         _binding = FragmentStatusBinding.inflate(inflater, container, false)
         binding.cutoffAge.visibility = View.INVISIBLE
 
-        model.cutoffAge.observe(viewLifecycleOwner) {
-            it?.let {
-                updateAge(it)
-            }
-        }
-
         return binding.root
     }
 
@@ -59,5 +53,25 @@ class StatusFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    /**
+     * @see [onStart]
+     */
+    override fun onStart() {
+        super.onStart()
+        model.cutoffAge.observe(viewLifecycleOwner) {
+            it?.let {
+                updateAge(it)
+            }
+        }
+    }
+
+    /**
+     * @see [onStop]
+     */
+    override fun onStop() {
+        super.onStop()
+        model.cutoffAge.removeObservers(viewLifecycleOwner)
     }
 }

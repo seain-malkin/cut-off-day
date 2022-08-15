@@ -1,6 +1,5 @@
 package me.seain.cutoffday.fragment
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +12,11 @@ import me.seain.cutoffday.viewmodel.MainViewModel
 import java.util.*
 
 abstract class DateComponentFragment : Fragment() {
+
+    // Reference to the view binding object
+    // Only defined between onCreateView and onDestroyView
+    private var _binding: FragmentDateComponentBinding? = null
+    private val binding get() = _binding!!
 
     private val model: MainViewModel by activityViewModels()
 
@@ -32,11 +36,14 @@ abstract class DateComponentFragment : Fragment() {
      */
     protected abstract fun getDateComponentLabel(): String
 
+    /**
+     * @see [onCreateView]
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = FragmentDateComponentBinding.inflate(inflater, container, false)
+        _binding = FragmentDateComponentBinding.inflate(inflater, container, false)
 
         binding.verifiedLayout?.run {
             setBackgroundColor(SurfaceColors.SURFACE_1.getColor(requireContext()))
@@ -44,12 +51,34 @@ abstract class DateComponentFragment : Fragment() {
 
         binding.dateComponentLabel.text = getDateComponentLabel()
 
+        return binding.root
+    }
+
+    /**
+     * @see [onDestroyView]
+     */
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    /**
+     * @see [onStart]
+     */
+    override fun onStart() {
+        super.onStart()
         model.cutoffDate.observe(viewLifecycleOwner) {
             it?.let {
                 binding.dateComponent.text = getDateComponent(it)
             }
         }
+    }
 
-        return binding.root
+    /**
+     * @see [onStop]
+     */
+    override fun onStop() {
+        super.onStop()
+        model.cutoffDate.removeObservers(viewLifecycleOwner)
     }
 }
