@@ -20,10 +20,24 @@ class MainViewModelTest {
     }
 
     @Test
-    fun setCutoffAge() {
+    fun setCutoffAge_within_range() {
         model.setCutoffAge(18)
 
         assertEquals(18, model.cutoffAge.value)
+    }
+
+    @Test
+    fun setCutoffAge_less_than_min() {
+        model.setCutoffAge(0)
+
+        assertEquals(AGE_MIN, model.cutoffAge.value)
+    }
+
+    @Test
+    fun setCutoffAge_greater_than_max() {
+        model.setCutoffAge(100)
+
+        assertEquals(AGE_MAX, model.cutoffAge.value)
     }
 
     @Test
@@ -37,8 +51,29 @@ class MainViewModelTest {
     @Test
     fun changeCutoffAge_increase_within_range() {
         model.setCutoffAge(18)
-        model.changeCutoffAge(+1)
+        model.changeCutoffAge(1)
 
         assertEquals(19, model.cutoffAge.value)
+    }
+
+    @Test
+    fun changeCutoffAge_decrease_outside_range() {
+        model.setCutoffAge(AGE_MIN)
+        model.changeCutoffAge(-1)
+
+        assertEquals(AGE_MIN, model.cutoffAge.value)
+    }
+
+    @Test
+    fun changeCutoffAge_increase_outside_range() {
+        model.setCutoffAge(AGE_MAX)
+        model.changeCutoffAge(1)
+
+        assertEquals(AGE_MAX, model.cutoffAge.value)
+    }
+
+    companion object {
+        private const val AGE_MIN = 15
+        private const val AGE_MAX = 25
     }
 }
